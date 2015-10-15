@@ -1,0 +1,35 @@
+* Install
+** oh my zsh
+- Install zsh and config it with oh my zsh.
+#+begin_src sh
+  sudo apt-get install zsh
+  wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh
+  sh install.sh
+#+end_src
+- overwrite default config with my config.
+#+begin_src sh
+  git clone https://github.com/ecnewbie/my-dot-files
+#+end_src
+then copy all files in my-dot-files/config into ~.
+- reboot and try zsh.
+
+* Info
+** oh my zsh usable alias.
+| alias  | stand for                            |
+|--------+--------------------------------------|
+| ga     | git add                              |
+| gb     | git branch                           |
+| gca    | git commit -v -a                     |
+| gcam   | git commit -a -m                     |
+| gd     | git diff                             |
+| gl     | git pull                             |
+| glg    | git log --stat --color               |
+| glo    | git log --oneline --decorate --color |
+|--------+--------------------------------------|
+| vi     | emacs -q -nw                         |
+| emacst | env TERM=xterm-256color emacs -nw    |
+| emacsw | emacs -mm                            |
+| ect    | emacsclient -nw -a emacs             |
+| ecw    | emacsclient -c -a emacs              |
+| ftmp   | find . -name "*[~#]"                 |
+| ftmpr  | find . -name "*[~#]" \vert xargs rm  |
