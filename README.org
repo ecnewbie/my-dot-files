@@ -9,8 +9,9 @@
 - overwrite default config with my config.
 #+begin_src sh
   git clone https://github.com/ecnewbie/my-dot-files
+  sed  "/^plugins=/ { s/)/ z my-emacs my-misc)/; }" ~/.oh-my-zsh/templates/zshrc.zsh-template > ~/.zshrc
+  cp -a my-dot-files/config/.oh-my-zsh/* ~/.oh-my-zsh
 #+end_src
-then copy all files in my-dot-files/config into ~.
 - reboot and try zsh.
 
 * Info
