@@ -26,7 +26,7 @@ filtfv () {
 }
 
 filtfva () {
-    sed -n "/$1/"p $2 | less
+    sed -n "/$1/"p $2 | less +G
 }
 
 filtfa () {

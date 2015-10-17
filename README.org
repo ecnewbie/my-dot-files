@@ -9,28 +9,35 @@
 - overwrite default config with my config.
 #+begin_src sh
   git clone https://github.com/ecnewbie/my-dot-files
-  sed  "/^plugins=/ { s/)/ z my-emacs my-misc)/; }" ~/.oh-my-zsh/templates/zshrc.zsh-template > ~/.zshrc
+  sed  "/^plugins=/ { s/)/ z my-emacs my-misc)/; }; /^ZSH_THEME=/ { s/\".*\"/\"my-robbyrussell\"/; }" ~/.oh-my-zsh/templates/zshrc.zsh-template > ~/.zshrc
   cp -a my-dot-files/config/.oh-my-zsh/* ~/.oh-my-zsh
 #+end_src
 - reboot and try zsh.
 
 * Info
 ** oh my zsh usable alias.
-| alias  | stand for                            |
-|--------+--------------------------------------|
-| ga     | git add                              |
-| gb     | git branch                           |
-| gca    | git commit -v -a                     |
-| gcam   | git commit -a -m                     |
-| gd     | git diff                             |
-| gl     | git pull                             |
-| glg    | git log --stat --color               |
-| glo    | git log --oneline --decorate --color |
-|--------+--------------------------------------|
-| vi     | emacs -q -nw                         |
-| emacst | env TERM=xterm-256color emacs -nw    |
-| emacsw | emacs -mm                            |
-| ect    | emacsclient -nw -a emacs             |
-| ecw    | emacsclient -c -a emacs              |
-| ftmp   | find . -name "*[~#]"                 |
-| ftmpr  | find . -name "*[~#]" \vert xargs rm  |
+| alias                 | stand for                                        |
+|-----------------------+--------------------------------------------------|
+| ga                    | git add                                          |
+| gb                    | git branch                                       |
+| gca                   | git commit -v -a                                 |
+| gcam                  | git commit -a -m                                 |
+| gd                    | git diff                                         |
+| gl                    | git pull                                         |
+| glg                   | git log --stat --color                           |
+| glo                   | git log --oneline --decorate --color             |
+|-----------------------+--------------------------------------------------|
+| e                     | emacs -q -nw                                     |
+| ec                    | open file in an opened emacs.                    |
+| emacst                | open emacs in terminal.                          |
+| emacsw                | emacs -mm                                        |
+| ect                   | emacsclient in terminal.                         |
+| eframe                | open with emacsclient.                           |
+|-----------------------+--------------------------------------------------|
+| ftmp                  | find . -name "*[~#]"                             |
+| ftmpr                 | find . -name "*[~#]" \vert xargs rm              |
+| ffct                  | find content in current dir, ignore dot files.   |
+| ffctp                 | like ffct but with patten on files.              |
+| openf                 | open a file with xdg-open, select one if on arg. |
+| search                | search on cppreference.                          |
+| filtfv/filtfva/filtfa | filt on file, with tail, less, or nothing.       |
