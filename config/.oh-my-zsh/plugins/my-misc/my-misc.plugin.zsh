@@ -1,7 +1,7 @@
 alias ftmp='find . -name "*[~#]"'
 alias ftmpr='find . -name "*[~#]" | xargs rm'
 # find content in all files, ignore dot files.
-alias ffct='find . -type f | sed  -e "/\/\./ d" | xargs grep -n'
+alias ffct='find . -type f | sed  -e "/\/\./ d" | sed "/^/ {s/^/\"/; s/$/\"/; p}" | xargs grep -n'
 
 openf () {
     if [ "$1" = "" ] ;then
@@ -17,7 +17,7 @@ search () {
 
 # find content in files which match pattern, ignore dot files.
 ffctp () {
-    find . -type f -name "$1" | sed  -e "/\/\./ d" | xargs grep -n "$2"
+    find . -type f -name "$1" | sed  -e "/\/\./ d" | sed '/^/ {s/^/\"/; s/$/\"/; p}' | xargs grep -n "$2"
 }
 
 # filt file and show tail 20 lines.

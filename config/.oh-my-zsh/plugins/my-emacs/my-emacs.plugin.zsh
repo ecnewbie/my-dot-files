@@ -23,6 +23,7 @@ if "$ZSH/tools/require_tool.sh" emacs 23 2>/dev/null ; then
     alias emacst='env TERM=xterm-256color emacs -nw'
     alias emacsw='emacs -mm'
     alias ect='emacsclient -nw -a ""'
+    alias quitemacs='emacsclient -n -e "(kill-emacs)"'
 
     # same than M-x eval but from outside Emacs.
     alias eeval="$EMACS_PLUGIN_LAUNCHER --eval"
