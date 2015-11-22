@@ -16,7 +16,7 @@ search-cppreference () {
 }
 
 search-boost () {
-    w3m "http://www.google.com/search?q=$1+site:boost.org"
+    w3m "http://www.google.com.hk/search?hl=zh-CN&q=$1+site:boost.org"
 }
 
 search-wiki () {
@@ -28,7 +28,7 @@ search-archwiki () {
 }
 
 search-stackoverflow () {
-    w3m "http://www.google.com/search?q=$1+site:stackoverflow.com"
+    w3m "http://www.google.com.hk/search?hl=zh-CN&q=$1+site:stackoverflow.com"
 }
 
 # find content in files which match pattern, ignore dot files.
