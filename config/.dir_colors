@@ -1,0 +1,2 @@
+# directory that is other-writable (o+w) and not sticky:
+OTHER_WRITABLE 00;33
